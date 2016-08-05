@@ -1,0 +1,15 @@
+DataFolder=${PWD}
+cd ~/image_store/Scripts/PythonSrc/
+NameScript="NNAngledSeed"
+NameScriptPy=$NameScript".py"
+NameScriptCfg=$NameScript"Config.py"
+NoHupFile=$DataFolder"/"$NameScript".NoHup"
+rm -f $NoHupFile
+python $NameScriptCfg $DataFolder
+#python -i $NameScriptPy $DataFolder 
+nohup python $NameScriptPy $DataFolder > $NoHupFile&
+
+
+#python NNAngledConfig.py $DataFolder
+#python -i  NNAngled.py $DataFolder > NNAngled.NoHup
+#nohup python NNAngled.py $DataFolder > NNAngled.NoHup&
